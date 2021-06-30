@@ -2,25 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9fcd2a0-05b2-43b0-a262-ed15670fa575" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cirrus-MP-2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cirrus-MP-2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/BookDep1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/BookDep1.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/NewAnimations/Idle.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/NewAnimations/Idle.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Prefab_PurpleBook.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Prefab_PurpleBook.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/StaircaseCamera.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/StaircaseCamera.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Artists/Models/Prefab_Fish.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Artists/Models/Prefab_Fish.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Artists/Models/Prefab_PuzzleDeposit_Base.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Artists/Models/Prefab_PuzzleDeposit_Base.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FishCollection.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FishCollection.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/OptionsMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/OptionsMenu.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SCENEBACKUP.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SCENEBACKUP.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SCENEBACKUP/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SCENEBACKUP/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SCENEBACKUP/NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SCENEBACKUP/NavMesh.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NEWCharacter/PickUpItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NEWCharacter/PickUpItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/scatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/scatter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.polybrush/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.polybrush/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Guardian.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Guardian.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +30,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/NEWCharacter/PickUpItem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Guardian.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ueocQBlUM10vCVgbGxKE94NpIZ" />
@@ -81,10 +67,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="13248">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="13248" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
