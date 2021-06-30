@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7635062750510580944}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Prefab_Pillar6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,8 +42,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3951727, y: 6.2744336, z: 2.329638}
-  m_Center: {x: 0, y: 3.1372168, z: -0.3516934}
+  m_Size: {x: 1.3951727, y: 6.2744336, z: 1.91}
+  m_Center: {x: 0, y: 3.1372168, z: -0.3}
 --- !u!1001 &8994557896007173764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,6 +102,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5e9e4c7081bb03444a23490ee7f9f4fe, type: 3}
       propertyPath: m_Name
       value: MOD_Pillar_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5e9e4c7081bb03444a23490ee7f9f4fe, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e4c7081bb03444a23490ee7f9f4fe, type: 3}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1898757195991272841}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Prefab_Ruins_Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,6 +31,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4411979313236453636
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2722010823715087711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.354209, y: 0.83951175, z: 0.2738718}
+  m_Center: {x: -1.6771045, y: 0.41975582, z: 0.1369359}
+--- !u!65 &5916724955028965259
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2722010823715087711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.26017836, y: 0.83951175, z: 1.8551571}
+  m_Center: {x: -0.13008918, y: 0.41975582, z: 0.92757857}
 --- !u!114 &8699675008141590185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19507,32 +19533,6 @@ MonoBehaviour:
   m_SkinMeshRef: {fileID: 0}
   m_OriginalMeshObject: {fileID: -6731901832056418490, guid: c502e3dc2aac83945b9c598ce9e050bd, type: 3}
   m_Mode: 0
---- !u!65 &4411979313236453636
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2722010823715087711}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.354209, y: 0.83951175, z: 0.2738718}
-  m_Center: {x: -1.6771045, y: 0.41975582, z: 0.1369359}
---- !u!65 &5916724955028965259
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2722010823715087711}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.26017836, y: 0.83951175, z: 1.8551571}
-  m_Center: {x: -0.13008918, y: 0.41975582, z: 0.92757857}
 --- !u!1001 &2956595279618594830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19611,6 +19611,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c502e3dc2aac83945b9c598ce9e050bd, type: 3}
       propertyPath: m_Name
       value: MOD_CornerRuins
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c502e3dc2aac83945b9c598ce9e050bd, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c502e3dc2aac83945b9c598ce9e050bd, type: 3}

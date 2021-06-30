@@ -31,20 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &881563011202739621
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5432208864089508252}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2113629819765333494, guid: 56d87512e691e544d86a9b211fcc0eae, type: 3}
 --- !u!65 &4226350429576918429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73,9 +59,6 @@ MonoBehaviour:
   m_triggerEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_triggerExit:
-    m_PersistentCalls:
-      m_Calls: []
   m_enterTag: Player
   m_triggerEnterTagged:
     m_PersistentCalls:
@@ -92,11 +75,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_triggerExit:
+    m_PersistentCalls:
+      m_Calls: []
   m_exitTag: 
   m_triggerExitTagged:
     m_PersistentCalls:
       m_Calls: []
   m_onceAndDestroy: 0
+--- !u!64 &127880694519664835
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5432208864089508252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -628016576592088321, guid: 56d87512e691e544d86a9b211fcc0eae, type: 3}
 --- !u!1001 &5161825560493929677
 PrefabInstance:
   m_ObjectHideFlags: 0

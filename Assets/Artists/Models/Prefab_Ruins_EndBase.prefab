@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1330241599187773720}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Prefab_Ruins_EndBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +109,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MOD_Ruins_EndBase
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b6caac21fe4c44d8933ce0b0a2249e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06b6caac21fe4c44d8933ce0b0a2249e, type: 3}
 --- !u!4 &1570337993038140962 stripped
@@ -174,6 +178,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f9309631072659f4d97eb05567809eae, type: 3}
       propertyPath: m_Name
       value: MOD_Ruins_EndBase_Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f9309631072659f4d97eb05567809eae, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9309631072659f4d97eb05567809eae, type: 3}

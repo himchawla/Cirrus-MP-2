@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 421446003869946265}
   - component: {fileID: 59495691325104367}
   - component: {fileID: 6104782549612591541}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4816,7 +4816,7 @@ GameObject:
   - component: {fileID: 8228294041067858316}
   - component: {fileID: 1986726600282528454}
   - component: {fileID: 61785290}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Prefab_DepotAltar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

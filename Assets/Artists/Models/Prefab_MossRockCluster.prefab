@@ -65,7 +65,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3441591171644737230}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Prefab_MossRockCluster
   m_TagString: Untagged
   m_Icon: {fileID: 0}

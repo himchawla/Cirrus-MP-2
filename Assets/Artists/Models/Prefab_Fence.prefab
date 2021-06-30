@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7083265320780008234}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Prefab_Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,6 +31,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1185398520510712667
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2350618739541973226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.1552685, z: 0.14999999}
+  m_Center: {x: 0, y: 0.5776343, z: 0}
 --- !u!1001 &3197127595792246203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,8 +107,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MOD_PicketFence
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6d8044c202cb2249875d14ba40f53a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d8044c202cb2249875d14ba40f53a3, type: 3}
+--- !u!1 &2350618739541973226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e6d8044c202cb2249875d14ba40f53a3, type: 3}
+  m_PrefabInstance: {fileID: 3197127595792246203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3158364633559384656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e6d8044c202cb2249875d14ba40f53a3, type: 3}

@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 840312105abc459419c898ddc5142186
+guid: 57abea1be84fc8749969dac8ecab711c
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambertDeposit_Crystal
-    second: {fileID: 2100000, guid: a458a17bde52f1d468c76ea49fa4b4a3, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
