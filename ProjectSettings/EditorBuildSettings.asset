@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Myles' Test Scene Backup 220621.unity
-    guid: a506cdef5443c4c479c13dfeaf827e58
+    path: Assets/Scenes/Myles' Main Menu.unity
+    guid: 4fe4767f8c9e6af49b762fc1b85f3a50
   - enabled: 1
-    path: Assets/Scenes/EndScreen.unity
-    guid: 288789eb45649624aadbef97128096c9
+    path: Assets/Scenes/SCENEBACKUP.unity
+    guid: e638be8f6c93f124c8e9ef5f959a705f
   m_configObjects: {}

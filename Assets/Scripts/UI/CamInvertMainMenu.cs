@@ -8,7 +8,7 @@ public class CamInvertMainMenu : MonoBehaviour
     [SerializeField] private Sprite m_invert;
     [SerializeField] private Sprite m_normal;
 
-    bool m_Inverted = false;
+    public bool m_Inverted = false;
 
     private void Start()
     {
