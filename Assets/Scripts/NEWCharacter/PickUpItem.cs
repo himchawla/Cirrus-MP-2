@@ -13,8 +13,8 @@ public class PickUpItem : MonoBehaviour
     private bool m_pickepUp = false;
     private NavMeshAgent m_agent;
     
-    private bool m_incerasing;
-    private bool m_decreasing;
+    public bool m_incerasing { get; set; }
+    public bool m_decreasing { get; set; }
 
     private void Start()
     {
