@@ -93,7 +93,16 @@ public class Dialogue : MonoBehaviour
 
     public void ForceString(string _text)
     {
+        m_textBox.transform.parent.gameObject.SetActive(true);
         StartCoroutine(eSetString(m_defaultWaitTime, m_defaultDelayTime, _text));
+        StartCoroutine(Stop());
+
+    }
+
+    private IEnumerator Stop()
+    {
+        yield return new WaitForSeconds(m_defaultWaitTime);
+        m_textBox.transform.parent.gameObject.SetActive(false);
     }
 
     private IEnumerator eRunDialogue(int _count)
@@ -155,5 +164,28 @@ public class Dialogue : MonoBehaviour
                 m_pointer++;
             }
         }
+    }
+
+    public bool isEmpty()
+    {
+        if (m_textBox.enabled == true)
+        {
+            return (true);
+        }
+        else return false;
+    }
+
+    public void SetStringNoCap(int _count)
+    {
+        m_textBox.transform.parent.gameObject.SetActive(true);
+        if(m_dialogues[_count].m_camera!=null)
+            m_dialogues[_count].m_camera.SetActive(true);
+        m_pointer = 0;
+        {
+            StartCoroutine(eRunDialogue(_count));
+        }
+
+        m_playing = true;
+
     }
 }

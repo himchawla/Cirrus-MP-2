@@ -38,9 +38,19 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Transform m_depositLocationIsland3;
     [SerializeField] private Animator m_pickupIsland3;
     [SerializeField] private RisingPlatform m_staircase;
+
+
+
+    [Header("Cutscene 6")] 
+    [SerializeField]private GameObject m_recieverFinal;
+    [SerializeField]private Transform m_depositLocationFinal1;
+    [SerializeField]private Transform m_depositLocationFinal2;
+    [SerializeField] private Transform m_depositLocationFinalOrigin;
+    
     
     [SerializeField] private playerMovement m_playerMovement;
     
+    [SerializeField] private Dialogue m_dialogueBox;
 
 
     private IEnumerator eCutscene1()
@@ -150,6 +160,74 @@ public class CameraController : MonoBehaviour
 
         if (m_playerMovement != null)
             m_playerMovement.m_cutscenePlayin = false;
+    }
+    
+    private IEnumerator eCutscene6()
+    {
+        m_recieverFinal.SetActive(true);
+        
+        var agent = m_playerMovement.gameObject.GetComponent<NavMeshAgent>();
+        yield return new WaitForSeconds(2f);
+        agent.enabled = true;
+        agent.SetDestination(m_depositLocationFinal1.position);
+
+        m_playerMovement.LookOverride = null;
+        yield return new WaitUntil(()=>!agent.enabled);
+        m_playerMovement.transform.rotation = m_depositLocationFinal1.rotation;
+        
+        m_dialogueBox.ForceString("Dialogue 1");
+        yield return new WaitForSeconds(4);
+        
+        agent.enabled = true;
+        agent.SetDestination(m_depositLocationFinalOrigin.position);
+
+        m_playerMovement.LookOverride = null;
+        yield return new WaitUntil(()=>!agent.enabled);
+
+        
+        m_playerMovement.transform.rotation = m_depositLocationFinalOrigin.rotation;
+        
+        m_dialogueBox.ForceString("Dialogue 1");
+        yield return new WaitForSeconds(4);
+        
+        agent.enabled = true;
+        agent.SetDestination(m_depositLocationFinal2.position);
+
+        m_playerMovement.LookOverride = null;
+        yield return new WaitUntil(()=>!agent.enabled);
+
+        m_playerMovement.transform.rotation = m_depositLocationFinal2.rotation;
+        
+        m_dialogueBox.ForceString("Dialogue 1");
+        yield return new WaitForSeconds(4);
+
+        agent.enabled = true;
+        agent.SetDestination(m_depositLocationFinalOrigin.position);
+
+        m_playerMovement.LookOverride = null;
+        yield return new WaitUntil(()=>!agent.enabled);
+
+        m_playerMovement.transform.rotation = m_depositLocationFinalOrigin.rotation;
+        yield return new WaitForEndOfFrame();
+        
+        m_dialogueBox.ForceString("Dialogue 1");
+        yield return new WaitForSeconds(4);
+
+        m_recieverFinal.SetActive(false);
+        if (m_playerMovement != null)
+            m_playerMovement.m_cutscenePlayin = false;
+    }
+
+    public void Cutscene6() 
+    {
+        if (m_playerMovement != null)
+            m_playerMovement.m_cutscenePlayin = true;
+        else
+        {
+            Debug.Log("Player not assigned in script CameraController.cs");
+        }
+
+        StartCoroutine(eCutscene6());
     }
     
     
