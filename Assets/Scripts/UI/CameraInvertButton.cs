@@ -23,6 +23,18 @@ public class CameraInvertButton : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (cam.m_YAxis.m_InvertInput)
+        {
+            GetComponent<Image>().sprite = m_invert;
+        }
+        else
+        {
+            GetComponent<Image>().sprite = m_normal;
+        }
+    }
+
     public void onClick()
     {
         cam.m_YAxis.m_InvertInput = !cam.m_YAxis.m_InvertInput;
