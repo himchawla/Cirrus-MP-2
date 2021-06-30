@@ -8,17 +8,30 @@ public class CameraInvertButton : MonoBehaviour
 {
     public CinemachineFreeLook cam;
 
-    public TMPro.TextMeshProUGUI text;
+    [SerializeField] private Sprite m_invert;
+    [SerializeField] private Sprite m_normal;
 
     private void Start()
     {
         if (cam.m_YAxis.m_InvertInput)
         {
-            text.text = "Camera Y: Inverted";
+            GetComponent<Image>().sprite = m_invert;
         }
         else
         {
-            text.text = "Camera Y: Normal";
+            GetComponent<Image>().sprite = m_normal;
+        }
+    }
+
+    void Update()
+    {
+        if (cam.m_YAxis.m_InvertInput)
+        {
+            GetComponent<Image>().sprite = m_invert;
+        }
+        else
+        {
+            GetComponent<Image>().sprite = m_normal;
         }
     }
 
@@ -28,10 +41,10 @@ public class CameraInvertButton : MonoBehaviour
 
         if (cam.m_YAxis.m_InvertInput)
         {
-            text.text = "Camera Y: Inverted";
+            GetComponent<Image>().sprite = m_invert;
         } else
         {
-            text.text = "Camera Y: Normal";
+            GetComponent<Image>().sprite = m_normal;
         }
     }
 }

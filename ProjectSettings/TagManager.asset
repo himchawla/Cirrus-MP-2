@@ -11,6 +11,7 @@ TagManager:
   - Switch1
   - Switch2
   - PickUp
+  - playerCam
   layers:
   - Default
   - TransparentFX
