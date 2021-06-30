@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class OptionsMainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] OptionContent;
+    public void onClick()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (GameObject go in OptionContent)
+        {
+            go.SetActive(!go.activeSelf);
+        }
     }
 }
