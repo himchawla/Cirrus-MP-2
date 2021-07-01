@@ -21,6 +21,10 @@ public class Dialogue : MonoBehaviour
 
     [SerializeField] private List<ListWrapper> m_dialogues = new List<ListWrapper>();
     private bool m_canProceed = true;
+
+    [SerializeField] private AudioSource m_startAudio;
+
+    [SerializeField] private AudioSource m_dialogueProceed;
     //private bool m_moveTextForward;
 
     public bool m_playing
@@ -44,6 +48,9 @@ public class Dialogue : MonoBehaviour
 
     public void SetString(int _count)
     {
+        if(!m_startAudio.isPlaying)
+            m_startAudio.Play();
+        
         m_textBox.transform.parent.gameObject.SetActive(true);
         if(m_dialogues[_count].m_camera!=null)
             m_dialogues[_count].m_camera.SetActive(true);
@@ -93,7 +100,16 @@ public class Dialogue : MonoBehaviour
 
     public void ForceString(string _text)
     {
+        m_textBox.transform.parent.gameObject.SetActive(true);
         StartCoroutine(eSetString(m_defaultWaitTime, m_defaultDelayTime, _text));
+        StartCoroutine(Stop());
+
+    }
+
+    private IEnumerator Stop()
+    {
+        yield return new WaitForSeconds(m_defaultWaitTime);
+        m_textBox.transform.parent.gameObject.SetActive(false);
     }
 
     private IEnumerator eRunDialogue(int _count)
@@ -102,6 +118,7 @@ public class Dialogue : MonoBehaviour
         {
             if (m_canProceed)   
             {
+               
                 StartCoroutine(eSetString(m_defaultWaitTime, m_defaultDelayTime,
                     m_dialogues[_count].myList[m_pointer]));
 
@@ -131,7 +148,7 @@ public class Dialogue : MonoBehaviour
    
         m_textBox.SetText(_text);
         m_canProceed = true;
-
+    
         yield return new WaitForSeconds(_time);
 
         // yield return new WaitForSeconds(_time);
@@ -152,8 +169,33 @@ public class Dialogue : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump"))
             {
-                m_pointer++;
+                m_pointer++; 
+                if(!m_dialogueProceed.isPlaying)
+                    m_dialogueProceed.Play();
             }
         }
+    }
+
+    public bool isEmpty()
+    {
+        if (m_textBox.enabled == true)
+        {
+            return (true);
+        }
+        else return false;
+    }
+
+    public void SetStringNoCap(int _count)
+    {
+        m_textBox.transform.parent.gameObject.SetActive(true);
+        if(m_dialogues[_count].m_camera!=null)
+            m_dialogues[_count].m_camera.SetActive(true);
+        m_pointer = 0;
+        {
+            StartCoroutine(eRunDialogue(_count));
+        }
+
+        m_playing = true;
+
     }
 }

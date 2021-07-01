@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
@@ -38,9 +40,23 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Transform m_depositLocationIsland3;
     [SerializeField] private Animator m_pickupIsland3;
     [SerializeField] private RisingPlatform m_staircase;
+
+
+
+    [Header("Cutscene 6")] 
+    [SerializeField]private GameObject m_recieverFinal;
+    [SerializeField]private Transform m_depositLocationFinal1;
+    [SerializeField]private Transform m_depositLocationFinal2;
+    [SerializeField] private Transform m_depositLocationFinalOrigin;
+    [SerializeField] private Animator m_book1;
+    [SerializeField] private Animator m_book2;
+    [SerializeField] private GameObject m_recieverCamFinal1;
+    [SerializeField] private GameObject m_recieverCamFinal2;
     
     [SerializeField] private playerMovement m_playerMovement;
     
+    [SerializeField] private Dialogue m_dialogueBox;
+    [SerializeField] private RenderTexture m_renderTexture;
 
 
     private IEnumerator eCutscene1()
@@ -152,6 +168,119 @@ public class CameraController : MonoBehaviour
             m_playerMovement.m_cutscenePlayin = false;
     }
     
+    private IEnumerator eCutscene6()
+    {
+        m_recieverFinal.SetActive(true);
+        m_playerMovement.gameObject.GetComponent<AnimationHandler>().m_weightJump = 0f;
+        var agent = m_playerMovement.gameObject.GetComponent<NavMeshAgent>();
+        yield return new WaitForSeconds(2f);
+
+        agent.enabled = true;
+        agent.SetDestination(m_depositLocationFinalOrigin.position);
+
+        m_playerMovement.LookOverride = null;
+        yield return new WaitUntil(()=>!agent.enabled);
+
+        m_playerMovement.transform.rotation = m_depositLocationFinalOrigin.rotation;
+
+        m_recieverFinal.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 3.39f; 
+        m_dialogueBox.ForceString("WHO DARES INTRUDE UPON MY LANDS! PREPARE TO BE SMITE- ");
+        yield return new WaitForSeconds(4);
+        m_recieverFinal.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0f; 
+
+        
+        agent.enabled = true;
+        agent.SetDestination(m_depositLocationFinal1.position);
+
+
+        
+        m_playerMovement.LookOverride = null;
+        yield return new WaitUntil(()=>!agent.enabled);
+        m_playerMovement.transform.rotation = m_depositLocationFinal1.rotation;
+
+        
+        
+        m_recieverCamFinal1.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        m_playerMovement.gameObject.GetComponent<PickUpItem>().m_incerasing = true;
+        m_book1.SetTrigger("Execute");
+        yield return new WaitForSeconds(2.5f);
+        m_playerMovement.gameObject.GetComponent<PickUpItem>().m_decreasing = true;
+        m_recieverCamFinal1.SetActive(false);
+        
+        
+        
+        agent.enabled = true;
+        agent.SetDestination(m_depositLocationFinalOrigin.position);
+
+        m_playerMovement.LookOverride = null;
+        yield return new WaitUntil(()=>!agent.enabled);
+
+        m_playerMovement.transform.rotation = m_depositLocationFinalOrigin.rotation;
+        
+        
+       
+        
+        agent.enabled = true;
+        agent.SetDestination(m_depositLocationFinal2.position);
+
+        m_playerMovement.LookOverride = null;
+        yield return new WaitUntil(()=>!agent.enabled);
+
+        m_playerMovement.transform.rotation = m_depositLocationFinal2.rotation;
+        
+       
+
+        m_recieverCamFinal2.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        m_playerMovement.gameObject.GetComponent<PickUpItem>().m_incerasing = true;
+        m_book2.SetTrigger("Execute");
+        yield return new WaitForSeconds(2.5f);
+        m_playerMovement.gameObject.GetComponent<PickUpItem>().m_decreasing = true;
+
+        m_recieverCamFinal2.SetActive(false);
+        
+        agent.enabled = true;
+        agent.SetDestination(m_depositLocationFinalOrigin.position);
+
+        m_playerMovement.LookOverride = null;
+        yield return new WaitUntil(()=>!agent.enabled);
+
+        m_playerMovement.transform.rotation = m_depositLocationFinalOrigin.rotation;
+        yield return new WaitForEndOfFrame();
+        
+        m_dialogueBox.ForceString("I-is that volumes 5 and 6 of the tales of Fishy the Magic Koi Fish?");
+        yield return new WaitForSeconds(4);
+        
+        m_dialogueBox.ForceString("I've been looking everywhere for those! They're the last I needed for my collection!");
+        yield return new WaitForSeconds(4);
+        
+        m_dialogueBox.ForceString("You made me happy!!");
+        yield return new WaitForSeconds(4);
+
+        m_recieverFinal.SetActive(false);
+        if (m_playerMovement != null)
+            m_playerMovement.m_cutscenePlayin = false;
+
+        Camera.main.targetTexture = m_renderTexture;
+
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(0);
+    }
+
+    public void Cutscene6() 
+    {
+        if (m_playerMovement != null)
+            m_playerMovement.m_cutscenePlayin = true;
+        else
+        {
+            Debug.Log("Player not assigned in script CameraController.cs");
+        }
+
+        StartCoroutine(eCutscene6());
+        
+    }
+    
     
     private IEnumerator eCutscene4()
     {
@@ -198,7 +327,7 @@ public class CameraController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         
         m_staircase.rise();
-        m_StaircaseCam.GetComponent<Animator>().SetBool("Shake", true);
+        m_StaircaseCam.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 3.39f; 
 
         //Add the VFX here
         yield return new WaitForSeconds(4.0f);

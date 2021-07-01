@@ -55,6 +55,7 @@ public class playerMovement : MonoBehaviour
     float m_jumpTimer;
     public bool m_canMove { get; set; }
 
+    public bool m_hasCollected { get; set; }
     public bool m_cutscenePlayin { get; set; }
 
     private Vector3 m_movingPlat = Vector3.zero;
@@ -106,6 +107,7 @@ public class playerMovement : MonoBehaviour
         if (m_cutscenePlayin || !m_canMove)
         {
             m_rb.velocity = Vector3.zero;
+            m_rb.angularVelocity = Vector3.zero;
             //m_rb.AddForce(Physics.gravity, ForceMode.Acceleration);
 
             if (m_agent.enabled)
@@ -190,7 +192,8 @@ public class playerMovement : MonoBehaviour
                m_animationHandler.m_speedAnimator =  0f;
             else
             {
-                transform.rotation = LookOverride.rotation;
+                if(LookOverride != null)
+                    transform.rotation = LookOverride.rotation;
                 if(m_velocity.magnitude > 1f)
                     transform.forward = m_agent.velocity.normalized;
             }
