@@ -11,6 +11,8 @@ public class BookScript : MonoBehaviour
    private bool m_shrink;
    private Material m_material;
 
+   [SerializeField] private bool m_second;
+
    private void Start()
    {
    }

@@ -52,7 +52,12 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Animator m_book2;
     [SerializeField] private GameObject m_recieverCamFinal1;
     [SerializeField] private GameObject m_recieverCamFinal2;
-    
+
+
+    [Header("Cutscene Rise")]
+    [SerializeField] private GameObject m_wideCam;
+    [SerializeField] private GameObject m_nearCam;
+    [SerializeField] private Animator m_risingPlatform;
     [SerializeField] private playerMovement m_playerMovement;
     
     [SerializeField] private Dialogue m_dialogueBox;
@@ -374,6 +379,44 @@ public class CameraController : MonoBehaviour
         m_freeLook.m_YAxis.Value = 0f;
         m_freeLook.m_YAxisRecentering.m_enabled = false;
         Invoke("enable", 2);
+    }
+
+    private IEnumerator eCutsceneRise()
+    {
+        m_dialogueBox.ForceString("Wow! This ancient Tome is full of knowledge. ");
+        yield return new WaitForSeconds(4);
+        
+        m_dialogueBox.ForceString("It seems this one contains the knowledge of a path, that takes you to an ancient island. You can explore the ancient island now");
+        yield return new WaitForSeconds(4);
+        
+        m_wideCam.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        m_wideCam.SetActive(false);
+        m_nearCam.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        m_risingPlatform.SetTrigger("Rise");
+        m_nearCam.GetComponent<CinemachineVirtualCamera>()
+            .GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 3.36f;
+        yield return new WaitForSeconds(2f);
+        m_nearCam.GetComponent<CinemachineVirtualCamera>()
+            .GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0f;
+        m_nearCam.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        
+        if (m_playerMovement != null)
+            m_playerMovement.m_cutscenePlayin = false;
+    }
+
+    public void CutsceneRise()
+    {
+        if (m_playerMovement != null)
+            m_playerMovement.m_cutscenePlayin = true;
+        else
+        {
+            Debug.Log("Player not assigned in script CameraController.cs");
+        }
+
+        StartCoroutine(eCutsceneRise());
     }
     
 }

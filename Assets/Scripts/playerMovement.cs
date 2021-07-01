@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.PlayerLoop;
@@ -72,6 +73,7 @@ public class playerMovement : MonoBehaviour
     private Animator m_animator;
     private bool m_increaseWeight;
     private bool m_decreaseWeight;
+    [SerializeField] private CinemachineFreeLook m_freelook;
 
     // Start is called before the first frame update
     void Start()
@@ -188,6 +190,8 @@ public class playerMovement : MonoBehaviour
 
         if (m_cutscenePlayin || !m_canMove)
         {
+            m_freelook.m_XAxis.m_MaxSpeed = 0;
+            m_freelook.m_YAxis.m_MaxSpeed = 0;
             if(!m_agent.enabled)
                m_animationHandler.m_speedAnimator =  0f;
             else
@@ -198,6 +202,11 @@ public class playerMovement : MonoBehaviour
                     transform.forward = m_agent.velocity.normalized;
             }
             return;
+        }
+        else if (m_freelook.m_XAxis.m_MaxSpeed == 0)
+        {
+            m_freelook.m_XAxis.m_MaxSpeed = 450;
+            m_freelook.m_YAxis.m_MaxSpeed = 4;
         }
         m_jumpTimer -= Time.fixedDeltaTime;
         m_glideTimer -= Time.fixedDeltaTime;
