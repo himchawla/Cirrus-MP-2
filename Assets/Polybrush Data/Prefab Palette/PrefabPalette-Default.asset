@@ -15,7 +15,7 @@ MonoBehaviour:
   prefabs:
   - gameObject: {fileID: 6052285249745943499, guid: cfbf43859ac354047bbcf81726764c22, type: 3}
     settings:
-      m_Strength: 85.0136
+      m_Strength: 64.95254
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 281.63266, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -95,7 +95,7 @@ MonoBehaviour:
     name: Grass3
   - gameObject: {fileID: 6052285249745943499, guid: a3c46a7ea909da849b6f260c755cf25a, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 78.90511
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 340.40817, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -175,7 +175,7 @@ MonoBehaviour:
     name: Prefab_Foliage_Flowers
   - gameObject: {fileID: 8623539487999977332, guid: b07c0376460ffca428717c8682143d1c, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 52.306564
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
