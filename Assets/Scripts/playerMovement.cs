@@ -364,7 +364,7 @@ public class playerMovement : MonoBehaviour
         if (Input.GetButton("Jump") && m_isGliding)
         {
             if(disG > 5)
-                m_rb.AddForce(Physics.gravity / 4f, ForceMode.Acceleration);
+                m_rb.AddForce(-Physics.gravity / 6f, ForceMode.Acceleration);
 
 
             else
@@ -372,7 +372,7 @@ public class playerMovement : MonoBehaviour
                 float dis = disG;
                 dis = disG / 5f;
                 
-                m_rb.AddForce((Physics.gravity / 6f) * dis, ForceMode.Acceleration);
+                m_rb.AddForce((-Physics.gravity / 4f) * dis, ForceMode.Acceleration);
             }
         }
         else if (m_isGliding)
