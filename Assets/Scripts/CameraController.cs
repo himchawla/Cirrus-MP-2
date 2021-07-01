@@ -58,6 +58,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Dialogue m_dialogueBox;
     [SerializeField] private RenderTexture m_renderTexture;
 
+    [SerializeField] private AudioSource m_Door;
 
     private IEnumerator eCutscene1()
     {
@@ -157,6 +158,7 @@ public class CameraController : MonoBehaviour
         //agent.enabled = false;
         m_doorCam.SetActive(true);
         yield return new WaitForSeconds(2.0f);
+        m_Door.Play();
         m_doorL.SetTrigger("Open");
         m_doorR.SetTrigger("Open");
         yield return new WaitForSeconds(2.0f);
@@ -325,7 +327,7 @@ public class CameraController : MonoBehaviour
         m_StaircaseCam.SetActive(true);
 
         yield return new WaitForSeconds(2f);
-        
+        m_Door.Play();
         m_staircase.rise();
         m_StaircaseCam.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 3.39f; 
 
