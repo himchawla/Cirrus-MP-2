@@ -35,6 +35,35 @@ public class MovePlat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (this.enabled){
+
+        
+
+        if (m_isRandom.x == 1)
+        {
+            m_displacementNeg.x = Random.Range(m_rangeX.x, 0f);
+            m_displacementPos.x = Random.Range(0f, m_rangeX.y);
+        }
+        
+        if (m_isRandom.y == 1)
+        {
+            m_displacementNeg.y = Random.Range(m_rangeY.x, 0f);
+            m_displacementPos.y = Random.Range(0f, m_rangeY.y);
+        }
+        
+        if (m_isRandom.z == 1)
+        {
+            m_displacementNeg.z = Random.Range(m_rangeZ.x, 0f);
+            m_displacementPos.z = Random.Range(0f, m_rangeZ.y);
+        }
+        m_rigidBody = GetComponent<Rigidbody>();
+        m_origin = transform.position;
+        m_destinationMax = transform.position + m_displacementPos;
+        m_destinationMin = transform.position + m_displacementNeg;
+        }
+    }
+    void OnEnable()
+    {
         if (m_isRandom.x == 1)
         {
             m_displacementNeg.x = Random.Range(m_rangeX.x, 0f);
